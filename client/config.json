@@ -1,0 +1,55 @@
+{
+   "local": {
+        "config": {
+            "name": "Local Dev",
+            "apiBaseUrl": "http://10.129.159.116:8080/",
+            "recaptcha":{
+               "sitekey":"6LelFgoUAAAAAHfnAutrJqjntkMFxjedT72-SGfI",
+               "secretKey":"6LelFgoUAAAAAK3kc_P0PVwjNAMoUsrwENLjdLkq"
+            }
+        }
+    },
+
+    "dev": {
+        "config": {
+            "name": "Integration",
+            "apiBaseUrl": "http://dev-server/api/",
+            "recaptcha":{
+               "sitekey":"6LelFgoUAAAAAHfnAutrJqjntkMFxjedT72-SGfI",
+               "secretKey":"6LelFgoUAAAAAK3kc_P0PVwjNAMoUsrwENLjdLkq"
+            }
+        }
+    },
+
+    "qa": {
+        "config": {
+            "name": "QA",
+            "apiBaseUrl": "http://qa-server/api/",
+            "recaptcha":{
+               "sitekey":"6LelFgoUAAAAAHfnAutrJqjntkMFxjedT72-SGfI",
+               "secretKey":"6LelFgoUAAAAAK3kc_P0PVwjNAMoUsrwENLjdLkq"
+            }
+        }
+    },
+
+    "uat": {
+        "config": {
+            "name": "UAT",
+            "apiBaseUrl": "http://uat-server/api/",
+            "recaptcha":{
+               "sitekey":"6LelFgoUAAAAAHfnAutrJqjntkMFxjedT72-SGfI",
+               "secretKey":"6LelFgoUAAAAAK3kc_P0PVwjNAMoUsrwENLjdLkq"
+            }
+        }
+    },
+
+    "prod": {
+        "config": {
+            "apiBaseUrl": "http://prod-server/api/",
+            "recaptcha":{
+               "sitekey":"6LelFgoUAAAAAHfnAutrJqjntkMFxjedT72-SGfI",
+               "secretKey":"6LelFgoUAAAAAK3kc_P0PVwjNAMoUsrwENLjdLkq"
+            }
+        }
+    }
+}

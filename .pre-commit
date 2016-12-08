@@ -1,0 +1,2 @@
+#!/bin/sh
+npm run vet --fail-on-error=1

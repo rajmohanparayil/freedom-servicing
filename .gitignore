@@ -1,0 +1,26 @@
+# IDE setting files
+.idea/
+.settings/
+.vs/
+.vscode/
+
+# NPM, Bower and Typings
+bower_components/
+node_modules/
+typings/
+
+# Build output
+.build/
+
+# Generated files
+tslint.json
+client/index.html
+client/modules/app.ts
+client/modules/**/*.module.ts
+
+# JavaScript and map files, except in the assets folder
+client/modules/**/*.js
+client/modules/**/*.js.map
+
+# Log/debug files from tools like npm
+*.log

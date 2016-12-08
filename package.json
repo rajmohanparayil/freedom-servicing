@@ -1,0 +1,36 @@
+{
+  "name": "freedom-servicing",
+  "version": "1.0.0",
+  "description": "Freedom Mortgage Servicing",
+  "scripts": {
+    "postinstall": "bower install && typings install",
+    "build-dist": "gulp build-dist --env=prod",
+    "clean": "gulp clean",
+    "vet": "gulp vet",
+    "update-gulp": "npm un --save-dev ng1-template-gulp && npm i --save-dev ng1-template-gulp",
+    "update-swagen": "npm un --save-dev swagen swagen-ng1-http && npm i --save-dev swagen swagen-ng1-http",
+    "swagger": "swagen"
+  },
+  "license": "UNLICENSED",
+  "main": "server/server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angular-template/ng1-template.git"
+  },
+  "author": "Angular Template",
+  "bugs": {
+    "url": "https://github.com/angular-template/ng1-template/issues"
+  },
+  "homepage": "https://github.com/angular-template/ng1-template#readme",
+  "devDependencies": {
+    "@types/node": "^6.0.41",
+    "gulp": "^3.9.0",
+    "ng1-template-gulp": "^1.10.0",
+    "swagen": "0.0.16",
+    "swagen-ng1-http": "0.0.30"
+  },
+  "dependencies": {
+    "compression": "^1.6.0",
+    "express": "^4.13.3"
+  }
+}

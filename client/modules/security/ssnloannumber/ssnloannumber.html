@@ -1,0 +1,77 @@
+<div id="wrapper" class="container-fluid clear-padding registerPage">
+    <div class="row page-content-wrapper">
+        <main class="content_area">
+            <div class="register_wrapper col-xs-12 col-sm-10 col-md-9">
+                <div class="register_container">
+                    <div class="tablet-banner">
+                        <span class="tab-header">Register</span>
+                    </div>
+                    <div class="register_banner">
+                        <div class="register-group">
+                            <div class="reg-icon"></div>
+                            <span>Register</span>
+                        </div>
+                    </div>
+                    <div id="ssnbox" class="mainregbox col-xs-12 col-sm-9 col-md-12">
+                        <form id="regform" class="form-horizontal" role="form" autocomplete="off">
+                            <div class="row">
+                                <h4 class="green-text">Please enter your Social Security Number *</h4>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-3 col-sm-2 col-md-2 regsets">
+                                    <input type="text" class="form-control txtbox" maxlength="3" ng-model="ssnloannumber.ssn1">
+                                </div>
+                                <div class="col-xs-2 col-sm-1 col-md-1 col-sm-offset-1 col-md-offset-1 regsets">
+                                    <input type="text" class="form-control txtbox" maxlength="2" ng-model="ssnloannumber.ssn2">
+                                </div>
+                                <div class="col-xs-3 col-sm-3 col-md-3 col-sm-offset-1 col-md-offset-1 regsets">
+                                    <input type="text" class="form-control txtbox" maxlength="4" ng-change="ssnloannumber.checklength()" ng-model="ssnloannumber.ssn3">
+                                </div>
+
+                                <div class="col-xs-1 col-sm-5 col-md-5 regsets">
+                                    <a href="#" class="pntool">
+                                        <label class="qusIcon"></label>
+                                        <span>This is required to verify your identity and relationship with Freedom Mortgage. Your information will be submitted through a secure channel.</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="form-group row" ng-messages="passwordForm.new_password2.$error">
+                                <div ng-if="ssnloannumber.ssnValid"> <label class="pass-hint" style="color:'#ff0000'">Social security number could not be found in our records . Please Recheck!</label></div>
+                            </div>
+                            <div ng-if="ssnloannumber.showLoanNumber">
+                                <div class="form-group row">
+                                    <p class="ln-lbl">Please enter a loan number with freedom</p>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-xs-10 col-sm-10 col-md-4 regsets">
+                                        <input type="text" class="form-control txtbox" id="loan-number" ng-model="ssnloannumber.loannumber" maxlength="20" placeholder="Loan Number">
+                                    </div>
+                                </div>
+                                <div class="form-group row" ng-messages="passwordForm.new_password2.$error">
+                                    <div ng-if="ssnloannumber.loanNumberValid"> <label class="pass-hint" style="color:'#ff0000'">Loan Number could not be found in our records . Please Recheck!</label></div>
+                                </div>
+                                <div class="form-group row">
+                                    <p class="ln-link"><a href="#">Click Here</a> If you don't know the loan number</p>
+                                </div>
+                            </div>
+                            <div class="row bnt-Group">
+                                <div class="text-left">
+                                    <button id="rbtn" ng-disabled="ssnloannumber.enableNextBtn==false" ng-click="ssnloannumber.checkloannumber()" class="btn-md btn form-control bold-text" type="submit"> Next </button>
+                                </div>
+                                <div class="text-left">
+                                    <button id="cbtn" class="btn-md btn form-control bold-text" type="submit"> Cancel </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="recentTrans">
+                    <h4 class="green-text">
+                        For details on recently transferred loan,
+                        <a href="loan.html">Click Here</a>
+                    </h4>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div id="wrapper" class="container-fluid clear-padding loginPage">
+    <div class="row page-content-wrapper">
+        <main class="content_area">
+		   <div class="login_wrapper col-xs-12 col-sm-10 col-md-9 col-lg-7">
+		    <div class="login_container">
+<div class="tablet-banner">
+                        <span class="tab-header">Login</span>
+              </div>
+			  <div class="login_banner">
+				   <div class="login-group">
+                            <div class="login-icon"></div>
+                            <span>Login</span>
+                    </div>			  </div>
+		      <div id="loginbox" class="col-xs-12 col-sm-12 col-md-11">
+			     <form id="loginform" name="loginform" class="form-horizontal" role="form" ng-submit="">
+				             
+							<div class="row">
+                               <h4 class="green-text">To access your My Freedom Account,<br>Please enter your username and password below.</h4>
+                            </div>
+							<div class="row managecnt">
+							  <p>Once you login, you will able to manage all of your active loans with Freedom Mortgage.</p>
+							</div>
+                                    
+                           <div class="row input-group">
+								<span class="input-group-addon">
+								<i class="usrIcon"></i>
+								</span>
+								<input id="login-username" class="form-control" name="username" value="" placeholder="Username" type="text" maxlength="20" ng-model="login.userName" fs-special-char='^[a-zA-Z0-9]+$' required />
+							</div>
+                                
+                           <div class="row input-group">
+							<span class="input-group-addon">
+							<i class="pwdIcon"></i>
+							</span>
+							<input id="login-password" class="form-control" name="password" placeholder="Password" type="password" maxlength="20" ng-model="login.wpassword" />
+                           </div>
+						    <div class="form-group row" ng-messages="loginform.login_new.$error">
+                                <div ng-show="login.errorMessage == true"> <label class="pass-hint" style="color:'#ff0000'">You entered an invalid Username/ Password</label></div>
+                            </div>
+						   <div class="row rememberInfo">
+								<p>
+									<input id="remember" checked="" type="checkbox">
+									<label for="remember">Remember me</label>
+								</p>
+								<div class="col-xs-1 col-sm-7 col-md-7 regsets">	  
+								  <a href="#" class="pntool">
+                                     <div class="qusIcon"></div>
+                                     <span>Remember me stores your user id on this computer. You should not use this feature on public computers (such as those in library or Internet Café)</span>
+                                   </a> 
+								</div> 
+						   </div>
+						   <div class="row shared">
+						     <h4 class="green-text">Do not check if using a shared computer</h4>
+						   </div>
+						   <div class="row forgot-section">
+								<ul class="clear-padding display-flex flex-wrap clear-margin">
+								<li>
+								<a href="#">Forgot Username?</a>
+								</li>
+								<li>
+								<a href="#">Forgot Password?</a>
+								</li>
+								</ul>
+							</div>
+							 <div ng-if="login.count == 2">
+							<p class="confirmCaptcha">Confirm that you are not a robot</p>
+                            <div class="row captchaSec">
+                                <div grecaptcha data-ng-model="login.captchaResponse" id="gre" gre-info="info">
+                                    Loading..
+                                </div>
+                            </div>
+							 </div>
+							<div class="row loginSec">
+								<div class="text-left">
+								<button id="btnSearch" class="btn-md btn custom-btn form-control bold-text" type="submit" ng-disabled="login.userName == null || login.wpassword == null" ng-click="login.validateUser()"> Login </button>
+								</div>
+							</div>
+							<p class="confirmCaptcha">Need an acocunt?</p>
+							<div class="row loginSec">
+								<div class="text-left">
+								<button id="btnRegister" class="btn-md btn custom-btn form-control bold-text" ng-click="login.RegisterUser()"> Register </button>
+								</div>
+							</div>
+				 </form>					
+			  </div>
+			 </div> 
+			 <div class="recentTrans">
+			   <h4 class="green-text">For details on recently transferred loan, <a href="javascript:void(0)" ng-click="login.LoadFAQ()">Click Here</a></h4>
+			 </div>
+			 
+			</div> 
+		  </main>
+    </div>
+</div>

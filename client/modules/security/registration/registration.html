@@ -1,0 +1,165 @@
+<div id="wrapper" class="container-fluid clear-padding registerPage">
+    <div class="row page-content-wrapper">
+        <main class="content_area">
+            <div class="register_wrapper col-xs-12 col-sm-10 col-md-9">
+                <div class="register_container">
+                    <div class="tablet-banner">
+                        <span class="tab-header">Register</span>
+                    </div>
+                    <div class="register_banner">
+                        <div class="register-group">
+                            <div class="reg-icon"></div>
+                            <span>Register</span>
+                        </div>
+                    </div>
+                    <div id="regbox" class="mainregbox col-xs-12 col-sm-9 col-md-12">
+                        <form id="regform" class="form-horizontal" role="form">
+                            <div class="row">
+                                <h4 class="green-text">Please ensure that your name matches the name printed on your loan statements. Your information
+                                    is safe and secure, in accordance with our Privacy / Security policy. </h4>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-11 col-sm-5 col-md-5 regsets">
+                                    <input type="text" class="form-control txtbox" id="fstName" placeholder="First Name*" value="James" disabled="true">
+                                </div>
+                                <div class="col-xs-11 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1 regsets">
+                                    <input type="text" class="form-control txtbox" id="lastName" placeholder="Last Name*" value="Bond" disabled="true">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-11 col-sm-5 col-md-5 regsets">
+                                    <input type="email" class="form-control txtbox" id="email" placeholder="Email*" value="james.bond@secretservice.com" disabled="true">
+                                </div>
+                                <div class="col-xs-1 col-sm-7 col-md-7 regsets">
+                                    <a href="#" class="pntool">
+                                        <label class="qusIcon"></label>
+                                        <span>Please provide a valid email address on which you like to receive alerts, verification codes and notifications.</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-12 col-sm-5 col-md-6 contactInfo">
+                                    <form id="billingForm" data-toggle="validator" role="form">
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <input type="radio" id="radio01" name="radio" ng-selected="true"/>
+                                            <label for="radio01"><span></span>Cellphone</label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <input type="radio" id="radio02" name="radio" />
+                                            <label for="radio02"><span></span>Landline</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="form-group row toolShow">
+                                <div class="col-xs-11 col-sm-5 col-md-5 regsets">
+                                    <input type="phone" class="form-control txtbox" id="phone" placeholder="Phone*">
+                                </div>
+                                <div class="col-xs-1 col-sm-7 col-md-7 regsets">
+                                    <a href="#" class="pntool">
+                                        <label class="qusIcon"></label>
+                                        <span>
+                                        Please provide a valid phone number on which you like to receive alerts and verification codes
+                                      </span>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="row rememberInfo">
+                                <p>
+                                    <input id="remember" type="checkbox">
+                                    <label for="remember">I agree to receive messages and calls on the registered number. <a href="#">Terms & Conditions</a></label>
+                                </p>
+                            </div>
+                            <div class="form-group row uservalidate">
+                                <div class="col-xs-12 col-sm-5 col-md-5 regsets">
+                                    <input type="text" class="form-control txtbox" id="username" ng-model="registration.username" placeholder="Username*" fs-special-char='^[a-zA-Z0-9]+$'
+                                        maxlength="20" ng-blur="registration.minLengthCheck()" ng-focus="registration.focusBlank()"
+                                        ng-change="registration.focusBlank()">
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-1" ng-if="registration.errorUser && !registration.icon">
+                                    <div class="invalidusrName"><label></label></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-1" ng-if="!registration.errorUser && registration.icon">
+                                    <div class="validusrName"><label></label></div>
+                                </div>
+
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-12 col-sm-5 col-md-5 regsets">
+                                    <label class="pass-hint" style="color:#2888E8">No Special characters allowed in username field</label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-12 col-sm-5 col-md-5 regsets">
+                                    <div ng-show="registration.errorUser == true"> <label class="pass-hint" style="color:'#ff0000'">User name is unavailable, please try again.</label></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xs-12 col-sm-5 col-md-5 regsets">
+                                    <input type="password" class="form-control txtbox" maxlength="20" ng-model="registration.password" id="password" placeholder="Password*">
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1 regsets">
+                                    <input type="password" class="form-control txtbox" maxlength="20" ng-model="registration.confirmPassword" ng-change="registration.passwordMatch()"
+                                        ng-keyup="registration.passwordMatch()" id="cpassword" placeholder="Confirm Password*">
+                                </div>
+                            </div>
+                            <div class="form-group row" ng-messages="passwordForm.new_password2.$error">
+                                <div ng-if="registration.passwordsMatch"> <label class="pass-hint" style="color:'#ff0000'">Your passwords do not match .Please enter the same password again to confirm.</label></div>
+                            </div>
+                            <div class="form-group row regsets">
+                                <div class="col-xs-12 col-sm-12 col-md-11 pwd-box">
+                                    <fs-password-strength password="registration.password"></fs-password-strength>
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1 regsets">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <p class="seqDeatils">Security Tip:Choose a security question and response that is memorable, but not easy to guess.
+                                    Never post related information to your social networking profiles.</p>
+                            </div>
+                            <div class="form-group row seqBox">
+                                <div class="col-xs-12 col-sm-5 col-md-5 seqGrp">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12 regsets">
+                                        <select class="form-control txtbox" id="sq-1">
+										  <option value="">Security Question 1</option>
+										  <option value="1">What is your pet’s name?</option>
+										</select>
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12 regsets">
+                                        <input type="text" class="form-control txtbox">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1 seqGrp">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12 regsets">
+                                        <select class="form-control txtbox" id="sq-2">
+										   <option value="">Security Question 2</option>
+										   <option value="1">What is your favorite?</option>
+										</select>
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12 regsets">
+                                        <input type="text" class="form-control txtbox">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row captchaSec">
+                                <div grecaptcha data-ng-model="mainregistration.captchaResponse" gre-info="info">
+                                    Loading..
+                                </div>
+                            </div>
+                            <div class="row bnt-Group">
+                                <div class="text-left">
+                                    <button id="rbtn" class="btn-md btn form-control bold-text"  ng-click="registration.RegisterUser()"> Register </button>
+                                </div>
+                                <div class="text-left">
+                                    <button id="cbtn" class="btn-md btn form-control bold-text" type=""> Cancel </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+/*
+   Recommended CSS
+   See: http://angular-ui.github.io/bootstrap/#/getting_started
+*/
+
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+    cursor: pointer;
+}
